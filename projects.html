@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cliff's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+
+  <nav>
+    <div class="navbar">
+      <a href="index.html" >Home</a>
+      <a href="#" class="active">Projects</a>
+      <a href="contact.html">Contact</a>
+      </div>
+  </nav>
+
+
+<div class="project-container">
+  <div class="project-info-container">
+    <img
+      src="./assets/project1.jpg"
+      alt="Project picture"
+      class="project-picture"
+    />
+    <div class="project-text-container">
+        <div class="project-info">
+           <div class="project-info-text">Tres-Diamond Sales Monitoring and Management System</div>
+            <div class="project-info-text1">A web-based system for Tres-Diamond that manages 
+              sales, inventory, users, and reports. It includes role-based access and a real-time analytics dashboard.</div>
+        </div>
+      <div class="project-link">
+        <span class="tech-badge">PHP</span>
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">Tailwind css</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">MySQL</span>
+        <span class="tech-badge">Bootstrap</span>
+        <span class="tech-badge">XAMPP</span>
+        <span class="tech-badge">jQuery</span>
+        </div>
+    </div>
+  </div>
+  
+   <div class="project-info-container">
+    <img
+      src="./assets/project2.jpg"
+      alt="Project picture"
+      class="project-picture"
+    />
+    <div class="project-text-container">
+      <div class="project-info">
+         <div class="project-info-text">Health Center Management System</div>
+         <div class="project-info-text1">A Health Center Management System that handles patient 
+          consultations, records, medicine inventory, scheduling, and real-time notifications like expired medicines and appointment history.</div>
+      </div>
+      <div class="project-link">
+        <span class="tech-badge">PHP</span>
+        <span class="tech-badge">HTML</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">MySQL</span>
+        <span class="tech-badge">Bootstrap</span>
+        <span class="tech-badge">XAMPP</span>
+        <span class="tech-badge">jQuery</span>
+        </div>
+    </div>
+  </div>
+
+  <div class="project-info-container">
+    <img
+      src="./assets/project3.jpg"
+      alt="Project picture"
+      class="project-picture"
+    />
+    <div class="project-text-container">
+      <div class="project-info">
+        <div class="project-info-text">Reminisce</div>
+        <div class="project-info-text1">A personal Flutter project designed to preserve 
+          and share the memories of loved ones by linking them to QR codes, creating a lasting digital tribute accessible from physical memorials. </div>
+      </div>
+    <div class="project-link">
+        <span class="tech-badge">Dart</span>
+        <span class="tech-badge">Supabase</span>
+        <span class="tech-badge">Flutter</span>
+        </div>
+    </div>
+</div>
+
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg" />
+  <div id="caption"></div>
+</div>
+
+
+
+<script>
+ 
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll('.project-picture').forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.textContent = img.alt || "";
+    });
+  });
+
+ 
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+
+</body>
+</html>
+
+
+
