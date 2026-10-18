@@ -1,13 +1,15 @@
+emailjs.init('qdrD1Gvbo_Tx1DEps');
 
-emailjs.init('qdrD1Gvbo_Tx1DEps'); // Replace with your EmailJS user ID
-
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
-  emailjs.sendForm('service_xkjcvfq', 'template_vyhzlps', this)
-    .then(function() {
+
+  emailjs.sendForm('service_8gc5ksk', 'template_vyhzlps', this)
+    .then(() => {
       alert('Message sent!');
-      location.reload();
-    }, function(error) {
-      alert('Failed to send: ' + error.text);
+      this.reset();
+    })
+    .catch((error) => {
+      console.error('EmailJS error:', error);
+      alert('Failed to send: ' + (error.text || 'Please try again.'));
     });
 });
